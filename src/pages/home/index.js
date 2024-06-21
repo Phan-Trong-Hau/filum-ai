@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Popup from "../../components/Popup";
 
 const Home = () => {
   const [email, setEmail] = useState("");
@@ -44,6 +45,7 @@ const Home = () => {
           </button>
         </label>
       </section>
+      <Popup />
     </main>
   );
 };
