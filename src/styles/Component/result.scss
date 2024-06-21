@@ -1,0 +1,88 @@
+.result {
+  .result-container {
+    padding: 30px;
+
+    .title {
+      display: grid;
+      grid-template-columns: 1fr 10fr;
+      .title-left {
+        position: relative;
+        background-color: white;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .title-right {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 20px;
+        text-align: left;
+
+        h2 {
+          font-size: 34px;
+          line-height: 40px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .result {
+      margin: 20px 0;
+
+      p {
+        font-size: 16px;
+        text-align: left;
+        line-height: 22px;
+      }
+
+      #gauge-chart {
+        position: relative;
+        height: 100% !important;
+        width: auto !important;
+        svg {
+          width: 100% !important;
+          min-width: 250px !important;
+        }
+
+        .text-container {
+          position: initial !important;
+
+          .text {
+            text-align: center;
+            font-size: 16px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            color: white;
+            transform: translate(-50%, 0);
+          }
+        }
+      }
+    }
+  }
+
+  .action {
+    position: fixed;
+    display: flex;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1000;
+    flex-direction: column;
+
+    button {
+      background-color: rgb(32, 125, 255);
+      border-color: rgba(32, 125, 255, 0.507);
+      cursor: pointer;
+      padding: 20px;
+    }
+  }
+}

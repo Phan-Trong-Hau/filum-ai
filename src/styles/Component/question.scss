@@ -8,7 +8,22 @@
 
     .question {
       margin: 20px 0;
-      font-size: 24px;
+      p {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    .instruct {
+      text-align: left;
+      margin: 20px 0;
+      .instruct-list {
+        list-style: disc;
+
+        .instruct-item {
+          margin: 20px;
+        }
+      }
     }
 
     .options {
@@ -31,13 +46,13 @@
       margin-top: 20px;
       display: flex;
       justify-content: space-between;
-
+      gap: 30%;
       button {
         cursor: pointer;
         padding: 10px 20px;
         background-color: rgb(32, 125, 255);
         border: 2px solid rgba(152, 152, 152, 0.5);
-
+        width: 100%;
         &:disabled {
           background-color: rgba(32, 125, 255, 0.5);
           cursor: not-allowed;

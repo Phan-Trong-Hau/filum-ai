@@ -1,6 +1,7 @@
 import Popup from "../Popup";
 import data from "../../data/assessment.json";
 import { useEffect, useState } from "react";
+import GaugeChart from "react-gauge-chart";
 
 const Result = ({ totalScore, ...props }) => {
   const [userResult, setUserResult] = useState({});
@@ -34,10 +35,32 @@ const Result = ({ totalScore, ...props }) => {
             </div>
             <div className="result">
               <p>{userResult.description?.text}</p>
-              <p>Tổng điểm của bạn là: {totalScore}</p>
+              <GaugeChart
+                id="gauge-chart"
+                percent={totalScore / 10}
+                nrOfLevels={5}
+                marginInPercent={0.1}
+                arcPadding={0}
+                cornerRadius={0}
+                needleColor="#c48f00"
+                colors={["#c48f00", "#c8c8c8"]}
+                textComponentContainerClassName="text-container"
+                textComponent={
+                  <div className="text">
+                    {totalScore}
+                    <br />
+                    Score
+                  </div>
+                }
+              />
             </div>
           </div>
         </Popup>
+        <div className="action">
+          <button>Chia sẽ</button>
+          <button>Tải Xuống</button>
+          <button>Làm lại</button>
+        </div>
       </div>
     </>
   );
