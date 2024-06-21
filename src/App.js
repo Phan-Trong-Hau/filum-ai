@@ -21,7 +21,7 @@ function App() {
           property="og:image"
           content="https://filum-ai.vercel.app/assets/1.png"
         /> */}
-        <meta itemprop="name" content="Filum Ai Test" />
+        {/* <meta itemprop="name" content="Filum Ai Test" />
         <meta
           itemprop="description"
           content="Kiểm tra cấp độ thực hiện Voice of the Customer của bạn với Filum AI"
@@ -29,7 +29,19 @@ function App() {
         <meta
           itemprop="image"
           content="https://filum-ai.vercel.app/assets/1.png"
+        /> */}
+        <meta property="og:url" content="https://filum-ai.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Filum Ai Test" />
+        <meta
+          property="og:description"
+          content="Kiểm tra cấp độ thực hiện Voice of the Customer của bạn với Filum AI"
         />
+        <meta
+          property="og:image"
+          content="https://filum-ai.vercel.app/assets/1.png"
+        />
+        <meta property="og:site_name" content="Filum Ai Test" />
       </Helmet>
       <Router>
         <Header />
