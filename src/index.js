@@ -4,7 +4,7 @@ import App from "./App";
 import "./styles/style.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+root.hydrate(
   <React.StrictMode>
     <App />
   </React.StrictMode>
