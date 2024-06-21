@@ -17,7 +17,30 @@ const Result = ({ totalScore, ...props }) => {
     });
   }, [totalScore, results]);
 
+  useEffect(() => {
+    // Khởi tạo Facebook SDK
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: "your-app-id", // Thay thế 'your-app-id' bằng App ID của bạn
+        xfbml: true,
+        version: "v11.0",
+      });
+    };
+  }, []);
+
   console.log({ userResult });
+
+  const shareResult = () => {
+    const resultUrl = `https://filum-ai-server.vercel.app/result?level=${userResult.level}`;
+    console.log({ resultUrl });
+    window.FB.ui(
+      {
+        method: "share",
+        href: resultUrl,
+      },
+      function (response) {}
+    );
+  };
 
   return (
     <>
@@ -57,7 +80,7 @@ const Result = ({ totalScore, ...props }) => {
           </div>
         </Popup>
         <div className="action">
-          <button>
+          {/* <button>
             <div
               class="fb-share-button"
               data-href="https://sv-iuh.vercel.app/"
@@ -80,7 +103,9 @@ const Result = ({ totalScore, ...props }) => {
                 </a>
               </div>
             </div>
-          </button>
+          </button> */}
+          <button onClick={shareResult}>Share on Facebook</button>
+
           <button>Tải Xuống</button>
           <button>Làm lại</button>
         </div>
