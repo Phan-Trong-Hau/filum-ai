@@ -16,7 +16,11 @@ function App() {
           content="Some description."
         />
         <meta id="og-title" property="og:title" content="Filum Ai Test" />
-        <meta id="og-image" property="og:image" content="../../assets/1.png" />
+        <meta
+          id="og-image"
+          property="og:image"
+          content="https://filum-ai.vercel.app/assets/1.png"
+        />
       </Helmet>
       <Router>
         <Header />
