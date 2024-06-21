@@ -7,9 +7,9 @@ const Questions = ({ children, ...props }) => {
   const [indexQuestion, setIndexQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [totalScore, setTotalScore] = useState(0);
-  const [flagResult, setFlagResult] = useState(false);
+  const [flagResult, setFlagResult] = useState(true);
   const [flagQuestion, setFlagQuestion] = useState(false);
-  const [flagStart, setFlagStart] = useState(true);
+  const [flagStart, setFlagStart] = useState(false);
 
   const questions = data.questions;
   const isBoundaryValueLeft = indexQuestion === 0;

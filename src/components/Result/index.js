@@ -57,7 +57,30 @@ const Result = ({ totalScore, ...props }) => {
           </div>
         </Popup>
         <div className="action">
-          <button>Chia sẽ</button>
+          <button>
+            <div
+              class="fb-share-button"
+              data-href="https://sv-iuh.vercel.app/"
+              data-layout=""
+              data-size=""
+            >
+              <div
+                class="fb-share-button"
+                data-href="https://filum-ai.vercel.app/"
+                data-layout=""
+                data-size=""
+              >
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffilum-ai.vercel.app%2F&amp;src=sdkpreparse"
+                  class="fb-xfbml-parse-ignore"
+                >
+                  Share
+                </a>
+              </div>
+            </div>
+          </button>
           <button>Tải Xuống</button>
           <button>Làm lại</button>
         </div>
