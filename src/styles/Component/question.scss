@@ -1,0 +1,48 @@
+.question {
+  .question-container {
+    padding: 40px;
+
+    .title {
+      font-size: 20px;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 24px;
+    }
+
+    .options {
+      display: grid;
+      margin: 20px 0;
+      gap: 20px;
+      button {
+        background-color: rgba(0, 0, 0, 0);
+        border: 2px solid rgba(152, 152, 152, 0.5);
+        padding: 10px 20px;
+      }
+
+      .chose {
+        border: 2px solid rgb(0, 96, 192);
+        color: rgb(0, 96, 192);
+      }
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: rgb(32, 125, 255);
+        border: 2px solid rgba(152, 152, 152, 0.5);
+
+        &:disabled {
+          background-color: rgba(32, 125, 255, 0.5);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

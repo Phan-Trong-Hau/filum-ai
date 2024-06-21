@@ -6,8 +6,8 @@ const RouterApp = () => {
 
   return (
     <Routes>
-      {routes.map((route) => (
-        <Route path={route.path} element={route.element} />
+      {routes.map((route, index) => (
+        <Route path={route.path} element={route.element} key={index} />
       ))}
     </Routes>
   );

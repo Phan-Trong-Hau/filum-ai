@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Popup from "../../components/Popup";
+import Questions from "../../components/Questions";
 
 const Home = () => {
   const [email, setEmail] = useState("");
+
 
   const validateEmail = (email) => {
     return String(email)
@@ -45,7 +47,7 @@ const Home = () => {
           </button>
         </label>
       </section>
-      <Popup />
+      <Questions />
     </main>
   );
 };
