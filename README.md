@@ -67,7 +67,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 2. Uses Node version 20.15.0.
 3. Deployed on Vercel.
 
-### 3. Important Notes:
+## 3. Important Notes:
 
 1. Since the project is developed on the Windows operating system, it will perform best on Windows or Android. There may be some issues on iOS, macOS, and Linux.
 
