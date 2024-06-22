@@ -21,18 +21,17 @@ const Result = ({ totalScore, ...props }) => {
     // Khởi tạo Facebook SDK
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: "your-app-id", // Thay thế 'your-app-id' bằng App ID của bạn
+        appId: "12345",
         xfbml: true,
         version: "v11.0",
       });
     };
   }, []);
 
-  console.log({ userResult });
-
   const shareResult = () => {
-    const resultUrl = `https://filum-ai-server.vercel.app/result?level=${userResult.level}`;
-    console.log({ resultUrl });
+    const resultUrl = `https://filum-ai-server.vercel.app/result?level=${
+      userResult.level
+    }&user=${123}`;
     window.FB.ui(
       {
         method: "share",
@@ -80,32 +79,7 @@ const Result = ({ totalScore, ...props }) => {
           </div>
         </Popup>
         <div className="action">
-          {/* <button>
-            <div
-              class="fb-share-button"
-              data-href="https://sv-iuh.vercel.app/"
-              data-layout=""
-              data-size=""
-            >
-              <div
-                class="fb-share-button"
-                data-href="https://filum-ai.vercel.app/"
-                data-layout=""
-                data-size=""
-              >
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffilum-ai.vercel.app%2F&amp;src=sdkpreparse"
-                  class="fb-xfbml-parse-ignore"
-                >
-                  Share
-                </a>
-              </div>
-            </div>
-          </button> */}
           <button onClick={shareResult}>Share on Facebook</button>
-
           <button>Tải Xuống</button>
           <button>Làm lại</button>
         </div>
