@@ -11,7 +11,7 @@ const Result = ({ ...props }) => {
   const [userResult, setUserResult] = useState({});
   const [textLevel, setTextLevel] = useState("Ad hoc");
   const { results } = data;
-  const { totalScore, setTotalScore, setIndexQuestion, setAnswers } =
+  const { totalScore, userEmail, setTotalScore, setIndexQuestion, setAnswers } =
     useContext(UserDataContext);
   const navigate = useNavigate();
 
@@ -58,9 +58,7 @@ const Result = ({ ...props }) => {
   }, []);
 
   const shareResult = () => {
-    const resultUrl = `https://filum-ai-server.vercel.app/result?level=${
-      userResult.level
-    }&user=${123}`;
+    const resultUrl = `https://filum-ai-server.vercel.app/result?level=${userResult.level}&user=${userEmail}`;
     window.FB.ui(
       {
         method: "share",
