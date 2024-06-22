@@ -4,7 +4,14 @@ import UserDataContext from "../../context/UserDataProvider";
 import Popup from "../../components/Popup";
 
 const Home = () => {
-  const { userEmail, setUserEmail } = useContext(UserDataContext);
+  const {
+    userEmail,
+    setUserEmail,
+    setTotalScore,
+    setIndexQuestion,
+    setAnswers,
+    setUserResult,
+  } = useContext(UserDataContext);
   const navigate = useNavigate();
   const [openPopup, setOpenPopup] = useState(false);
 
@@ -16,7 +23,8 @@ const Home = () => {
       );
   };
 
-  const handleButtonStart = () => {
+  const handleStartButton = (e) => {
+    e.preventDefault();
     if (validateEmail()) {
       navigate("/instruction");
     } else {
@@ -26,6 +34,10 @@ const Home = () => {
 
   const handleOnChange = (e) => {
     setUserEmail(e.target.value);
+    setTotalScore(0);
+    setIndexQuestion(0);
+    setAnswers([]);
+    setUserResult({});
   };
 
   return (
@@ -40,20 +52,21 @@ const Home = () => {
             Đánh giá khả năng của bạn trong việc lắng nghe, hiểu và đáp ứng các
             tín hiệu từ khách hàng
           </p>
-          <label>
+          <form action={handleStartButton}>
             <input
               type="text"
               placeholder="Địa chỉ email của bạn"
               onChange={handleOnChange}
+              value={userEmail}
             />
             <button
               className="btn-primary"
               type="submit"
-              onClick={handleButtonStart}
+              onClick={handleStartButton}
             >
               Bắt đầu
             </button>
-          </label>
+          </form>
         </section>
       </div>
       {openPopup && (
