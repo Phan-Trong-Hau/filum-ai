@@ -1,17 +1,33 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/home";
 import Questions from "../pages/question";
 import Result from "../pages/result";
 import Instruction from "../pages/intruction";
+import { useContext } from "react";
+import UserDataContext from "../context/UserDataProvider";
 
 const RouterApp = () => {
-  const routes = [
+  const { userEmail } = useContext(UserDataContext);
+
+  // public routes
+  const publicRoutes = [
     { path: "/", element: <Home /> },
-    { path: "/instruction", element: <Instruction /> },
-    { path: "/questions", element: <Questions /> },
-    { path: "/result", element: <Result /> },
     { path: "*", element: <Home /> },
   ];
+
+  const privateRoutes = [
+    {
+      path: "/instruction",
+      element: userEmail ? <Instruction /> : <Navigate to="/" />,
+    },
+    {
+      path: "/questions",
+      element: userEmail ? <Questions /> : <Navigate to="/" />,
+    },
+    { path: "/result", element: userEmail ? <Result /> : <Navigate to="/" /> },
+  ];
+
+  const routes = [...publicRoutes, ...privateRoutes];
 
   return (
     <Routes>
