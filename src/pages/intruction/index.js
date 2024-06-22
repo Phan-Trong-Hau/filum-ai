@@ -34,8 +34,10 @@ const Instruction = ({ children, ...props }) => {
                 </li>
               </ul>
             </div>
-            <div className="actions">
-              <button onClick={handleStartButton}>Bắt đầu</button>
+            <div className="actions actions-instructions">
+              <button className="btn-primary" onClick={handleStartButton}>
+                Bắt đầu
+              </button>
             </div>
           </div>
         </Popup>

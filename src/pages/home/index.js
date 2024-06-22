@@ -20,7 +20,7 @@ const Home = () => {
     if (validateEmail()) {
       navigate("/instruction");
     } else {
-      setOpenPopup(true)
+      setOpenPopup(true);
     }
   };
 
@@ -29,36 +29,47 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
-      <section>
-        <h1>
-          Công ty bạn trưởng thành như thế nào trong việc lắng nghe khách hàng?
-        </h1>
-        <p>
-          Đánh giá khả năng của bạn trong việc lắng nghe, hiểu và đáp ứng các
-          tín hiệu từ khách hàng
-        </p>
-        <label>
-          <input
-            type="text"
-            placeholder="Địa chỉ email của bạn"
-            onChange={handleOnChange}
-          />
-          <button type="submit" onClick={handleButtonStart}>
-            Bắt đầu
-          </button>
-        </label>
-      </section>
+    <>
+      <div className="home">
+        <section>
+          <h1>
+            Công ty bạn trưởng thành như thế nào trong việc lắng nghe khách
+            hàng?
+          </h1>
+          <p>
+            Đánh giá khả năng của bạn trong việc lắng nghe, hiểu và đáp ứng các
+            tín hiệu từ khách hàng
+          </p>
+          <label>
+            <input
+              type="text"
+              placeholder="Địa chỉ email của bạn"
+              onChange={handleOnChange}
+            />
+            <button
+              className="btn-primary"
+              type="submit"
+              onClick={handleButtonStart}
+            >
+              Bắt đầu
+            </button>
+          </label>
+        </section>
+      </div>
       {openPopup && (
         <Popup>
           <div>
-            <p>Để bắt đầu, vui lòng nhập địa chỉ email của bạn.</p>
+            <p className="alert-text">
+              Để bắt đầu, vui lòng nhập đúng địa chỉ email của bạn.
+            </p>
             <br />
-            <button onClick={() => setOpenPopup(false)}>OK</button>
+            <button className="btn-primary" onClick={() => setOpenPopup(false)}>
+              OK
+            </button>
           </div>
         </Popup>
       )}
-    </div>
+    </>
   );
 };
 

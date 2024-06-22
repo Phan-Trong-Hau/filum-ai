@@ -1,7 +1,25 @@
 .question {
   .question-container {
     .title {
-      font-size: 20px;
+      font-size: 22px;
+      line-height: 26px;
+
+      h3 {
+        position: relative;
+        display: inline-block;
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 7px;
+          height: 7px;
+          border-radius: 100%;
+          background-color: rgb(0, 136, 255);
+
+          top: 50%;
+          transform: translate(-15px, -50%);
+        }
+      }
     }
 
     .question {
@@ -15,6 +33,7 @@
     .instructions {
       text-align: left;
       margin: 20px 0;
+      line-height: 24px;
       .instructions-list {
         list-style: disc;
 
@@ -30,13 +49,18 @@
       gap: 20px;
       button {
         background-color: rgba(0, 0, 0, 0);
-        border: 2px solid rgba(152, 152, 152, 0.5);
+        border: 2px solid rgb(152, 152, 152);
         padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
       }
 
       .chose {
-        border: 2px solid rgb(0, 96, 192);
-        color: rgb(0, 96, 192);
+        border: 2px solid rgb(0, 162, 255);
+        color: rgb(0, 162, 255);
       }
     }
 
@@ -46,14 +70,57 @@
       justify-content: space-between;
       gap: 30%;
       button {
-        cursor: pointer;
-        padding: 10px 20px;
-        background-color: rgb(32, 125, 255);
-        border: 2px solid rgba(152, 152, 152, 0.5);
         width: 100%;
-        &:disabled {
-          background-color: rgba(32, 125, 255, 0.5);
-          cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 526px) {
+  .question {
+    .question-container {
+      .title {
+        font-size: 18px;
+      }
+
+      .question {
+        margin: 10px 0;
+        p {
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+
+      .instructions {
+        text-align: left;
+        margin: 15px 0;
+        .instructions-list {
+          .instructions-item {
+            margin: 15px;
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+
+      .options {
+        button {
+          font-size: 12px;
+        }
+      }
+
+      .actions-instructions {
+        button {
+          width: 100% !important;
+        }
+      }
+
+      .actions {
+        margin-top: 15px;
+        gap: 20px;
+        button {
+          padding: 10px 20px;
+          width: auto;
         }
       }
     }

@@ -25,3 +25,16 @@
     padding: 30px;
   }
 }
+
+
+
+@media only screen and (max-width: 526px) {
+.popup-wrapper {
+  .popup-container {
+    min-width: 180px;
+    margin: 18px;
+    padding: 15px;
+  }
+}
+
+}

@@ -80,10 +80,11 @@ const Questions = ({ children, ...props }) => {
             <button
               onClick={handleChangeQuestion}
               disabled={isBoundaryValueLeft}
+              className="btn-secondary"
             >
               Quay lại
             </button>
-            <button onClick={handleChangeQuestion}>
+            <button onClick={handleChangeQuestion} className="btn-primary">
               {isBoundaryValueRight ? "Kết thúc" : "Tiếp theo"}
             </button>
           </div>
