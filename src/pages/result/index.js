@@ -1,11 +1,13 @@
-import Popup from "../Popup";
+import Popup from "../../components/Popup";
+import UserDataContext from "../../context/UserDataProvider";
 import data from "../../data/assessment.json";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import GaugeChart from "react-gauge-chart";
 
-const Result = ({ totalScore, ...props }) => {
+const Result = ({ ...props }) => {
   const [userResult, setUserResult] = useState({});
   const { results } = data;
+  const { totalScore } = useContext(UserDataContext);
 
   useEffect(() => {
     results?.forEach((result) => {
@@ -81,7 +83,7 @@ const Result = ({ totalScore, ...props }) => {
         <div className="action">
           <button onClick={shareResult}>Share on Facebook</button>
           <button>Tải Xuống</button>
-          <button>Làm lại</button>
+          <button onClick={() => {}}>Làm lại</button>
         </div>
       </div>
     </>

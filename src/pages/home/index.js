@@ -1,29 +1,29 @@
-import { useState } from "react";
-import Popup from "../../components/Popup";
-import Questions from "../../components/Questions";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import UserDataContext from "../../context/UserDataProvider";
 
 const Home = () => {
-  const [email, setEmail] = useState("");
+  const { userEmail, setUserEmail } = useContext(UserDataContext);
+  const navigate = useNavigate();
 
-
-  const validateEmail = (email) => {
-    return String(email)
+  const validateEmail = () => {
+    return String(userEmail)
       .toLowerCase()
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
 
-  const handleButtonStart = (e) => {
-    if (validateEmail(email)) {
-      alert("Email hợp lệ");
+  const handleButtonStart = () => {
+    if (validateEmail()) {
+      navigate("/instruction");
     } else {
       alert("Email không hợp lệ");
     }
   };
 
   const handleOnChange = (e) => {
-    setEmail(e.target.value);
+    setUserEmail(e.target.value);
   };
 
   return (
@@ -47,7 +47,6 @@ const Home = () => {
           </button>
         </label>
       </section>
-      <Questions />
     </main>
   );
 };
