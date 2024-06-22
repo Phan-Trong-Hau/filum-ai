@@ -49,7 +49,9 @@ Knowledge gained from the project:
 
 First you need to download the project to your computer using the following command
 
-`git clone https://github.com/Phan-Trong-Hau/filum-ai.git`
+```
+git clone https://github.com/Phan-Trong-Hau/filum-ai.git
+```
 
 In the project directory, you can run:
 
