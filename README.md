@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Filum AI Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 1. Overview
+
+- The project was created for the purpose of learning and testing knowledge.
+
+- Here is a test that [Filum AI](https://filum.ai/) gave me to assess my knowledge for the _Growth Engineer Intern_ position.
+
+### - Features
+
+Here are the key features of the project:
+
+1. Automatically share the survey result link via Facebook.
+2. The shared link displays corresponding thumbnails for each result.
+3. Use and customize a chart library to display the results.
+
+### - Request
+
+Here are the requirements for the test:
+
+1. Build a tool that helps businesses understand their maturity in listening to customers.
+2. Before starting, ask customers to provide their email address.
+3. Customers will be asked to answer some questions.
+4. After completing the assessment, customers will receive their maturity level and a description of it.
+5. Customers can share their results through Facebook using the result link.
+
+Sure, please provide [the link](https://filumxmp.sg.larksuite.com/docx/KACPdn6L7oAHzXxLk4Ol1IbJgLh) so I can check if it's still active.
+
+### - Experiences
+
+Knowledge gained from the project:
+
+1. Understanding how meta tags work.
+2. Gaining more knowledge about Client-Side Rendering (CSR) vs. Server-Side Rendering (SSR).
+
+## 2. Details
+
+
+### - Instructions Setup
+
+First you need to download the project to your computer using the following command
+
+`git clone https://github.com/Phan-Trong-Hau/filum-ai.git`
 
 In the project directory, you can run:
 
-### `npm start`
+```
+npm i
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**_Note_**: This project requires a server to operate, [here](https://github.com/Phan-Trong-Hau/filum-ai-server) is the path to the project's server.
 
-### `npm test`
+### - Deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Client: [filum-ai.vercel.app](https://filum-ai.vercel.app/)
+- Server: [filum-ai-server.vercel.app](https://filum-ai-server.vercel.app/)
 
-### `npm run build`
+### - Development Environment:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Built on a Windows operating system.
+2. Uses Node version 20.15.0.
+3. Deployed on Vercel.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Important Notes:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Since the project is developed on the Windows operating system, it will perform best on Windows or Android. There may be some issues on iOS, macOS, and Linux.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. When using the Facebook share button, please ensure that your browser is logged into Facebook. If Facebook in the browser is not logged in, it will display an error message like:
+   `"Invalid App ID: The provided app ID does not look like a valid app ID."`
+   Please log in and try again.
