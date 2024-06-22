@@ -1,10 +1,11 @@
 // base
-@import "./reset.scss";
+@import "./base/reset.scss";
+@import "./base/global.scss";
 
 // components
 @import "./components/popup.scss";
-@import "./components/question.scss";
-@import "./components/result.scss";
 
 // pages
 @import "./page/home.scss";
+@import "./page/question.scss";
+@import "./page/result.scss";

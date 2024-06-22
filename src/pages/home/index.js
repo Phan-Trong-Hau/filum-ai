@@ -27,10 +27,10 @@ const Home = () => {
   };
 
   return (
-    <main>
+    <div className="home">
       <section>
         <h1>
-          Công ty bạn trưởng thành như thế nào trong việc lắng nghe khách hàng
+          Công ty bạn trưởng thành như thế nào trong việc lắng nghe khách hàng?
         </h1>
         <p>
           Đánh giá khả năng của bạn trong việc lắng nghe, hiểu và đáp ứng các
@@ -47,7 +47,7 @@ const Home = () => {
           </button>
         </label>
       </section>
-    </main>
+    </div>
   );
 };
 
