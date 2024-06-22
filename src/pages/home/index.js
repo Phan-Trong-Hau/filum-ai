@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserDataContext from "../../context/UserDataProvider";
+import Popup from "../../components/Popup";
 
 const Home = () => {
   const { userEmail, setUserEmail } = useContext(UserDataContext);
   const navigate = useNavigate();
+  const [openPopup, setOpenPopup] = useState(false);
 
   const validateEmail = () => {
     return String(userEmail)
@@ -18,7 +20,7 @@ const Home = () => {
     if (validateEmail()) {
       navigate("/instruction");
     } else {
-      alert("Email không hợp lệ");
+      setOpenPopup(true)
     }
   };
 
@@ -47,6 +49,15 @@ const Home = () => {
           </button>
         </label>
       </section>
+      {openPopup && (
+        <Popup>
+          <div>
+            <p>Để bắt đầu, vui lòng nhập địa chỉ email của bạn.</p>
+            <br />
+            <button onClick={() => setOpenPopup(false)}>OK</button>
+          </div>
+        </Popup>
+      )}
     </div>
   );
 };
