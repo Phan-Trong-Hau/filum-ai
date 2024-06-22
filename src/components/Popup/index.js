@@ -1,7 +1,15 @@
-const Popup = ({ children, ...props }) => {
+const Popup = ({ children, backgroundWhite = false, ...props }) => {
   return (
     <div className="popup-wrapper" {...props}>
-      <div className="popup-container">{children}</div>
+      <div
+        className={
+          backgroundWhite
+            ? "popup-container background-white"
+            : "popup-container"
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 };

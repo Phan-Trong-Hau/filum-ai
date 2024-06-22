@@ -57,7 +57,7 @@ const Home = () => {
         </section>
       </div>
       {openPopup && (
-        <Popup>
+        <Popup backgroundWhite={true}>
           <div>
             <p className="alert-text">
               Để bắt đầu, vui lòng nhập đúng địa chỉ email của bạn.

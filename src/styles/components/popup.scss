@@ -24,17 +24,19 @@
     margin: 30px;
     padding: 30px;
   }
-}
 
-
-
-@media only screen and (max-width: 526px) {
-.popup-wrapper {
-  .popup-container {
-    min-width: 180px;
-    margin: 18px;
-    padding: 15px;
+  .background-white {
+    background-color: white !important;
+    color: #000 !important;
   }
 }
 
+@media only screen and (max-width: 526px) {
+  .popup-wrapper {
+    .popup-container {
+      min-width: 180px;
+      margin: 18px;
+      padding: 15px;
+    }
+  }
 }
