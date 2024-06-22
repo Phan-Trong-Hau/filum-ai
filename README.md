@@ -35,8 +35,15 @@ Knowledge gained from the project:
 1. Understanding how meta tags work.
 2. Gaining more knowledge about Client-Side Rendering (CSR) vs. Server-Side Rendering (SSR).
 
-## 2. Details
+## 2. Important Notes:
 
+1. Since the project is developed on the Windows operating system, it will perform best on Windows or Android. There may be some issues on iOS, macOS, and Linux.
+
+2. When using the Facebook share button, please ensure that your browser is logged into Facebook. If Facebook in the browser is not logged in, it will display an error message like:
+   `"Invalid App ID: The provided app ID does not look like a valid app ID."`
+   Please log in and try again.
+
+## 3. Details
 
 ### - Instructions Setup
 
@@ -66,11 +73,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 1. Built on a Windows operating system.
 2. Uses Node version 20.15.0.
 3. Deployed on Vercel.
-
-## 3. Important Notes:
-
-1. Since the project is developed on the Windows operating system, it will perform best on Windows or Android. There may be some issues on iOS, macOS, and Linux.
-
-2. When using the Facebook share button, please ensure that your browser is logged into Facebook. If Facebook in the browser is not logged in, it will display an error message like:
-   `"Invalid App ID: The provided app ID does not look like a valid app ID."`
-   Please log in and try again.
