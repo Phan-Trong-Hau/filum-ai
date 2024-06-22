@@ -70,17 +70,61 @@
   .action {
     position: fixed;
     display: flex;
-    right: 0;
+    right: -2px;
     top: 50%;
     transform: translate(0, -50%);
     z-index: 1000;
     flex-direction: column;
+    gap: 10px;
 
     button {
-      background-color: rgb(32, 125, 255);
-      border-color: rgba(32, 125, 255, 0.507);
-      cursor: pointer;
-      padding: 20px;
+      padding: 15px;
+      writing-mode: vertical-lr;
+    }
+
+    button:nth-child(1) {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+@media only screen and (max-width: 526px) {
+  .result {
+    .result-container {
+      .title {
+        .title-left {
+          width: 40px;
+          height: 40px;
+
+          img {
+            max-width: 25px;
+          }
+        }
+
+        .title-right {
+          font-size: 12px;
+
+          h2 {
+            font-size: 22px;
+            line-height: 32px;
+          }
+        }
+      }
+
+      .result {
+        margin: 10px 0;
+
+        p {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    .action {
+      button {
+        padding: 7px;
+      }
     }
   }
 }

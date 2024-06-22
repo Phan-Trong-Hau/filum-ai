@@ -3,11 +3,17 @@ import UserDataContext from "../../context/UserDataProvider";
 import data from "../../data/assessment.json";
 import { useContext, useEffect, useState } from "react";
 import GaugeChart from "react-gauge-chart";
+import refreshIcon from "../../icons/refresh.svg";
+import downloadIcon from "../../icons/download.svg";
+import { useNavigate } from "react-router-dom";
 
 const Result = ({ ...props }) => {
   const [userResult, setUserResult] = useState({});
+  const [textLevel, setTextLevel] = useState("Ad hoc");
   const { results } = data;
-  const { totalScore } = useContext(UserDataContext);
+  const { totalScore, setTotalScore, setIndexQuestion, setAnswers } =
+    useContext(UserDataContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     results?.forEach((result) => {
@@ -15,6 +21,27 @@ const Result = ({ ...props }) => {
 
       if (totalScore >= result.range[0] && totalScore < result.range[1]) {
         setUserResult(result);
+
+        switch (result.level) {
+          case 1:
+            setTextLevel("Ad hoc");
+            break;
+          case 2:
+            setTextLevel("Establishing");
+            break;
+          case 3:
+            setTextLevel("Performing");
+            break;
+          case 4:
+            setTextLevel("Optimizing");
+            break;
+          case 5:
+            setTextLevel("Embedded");
+            break;
+          default:
+            setTextLevel("Ad hoc");
+            break;
+        }
       }
     });
   }, [totalScore, results]);
@@ -43,6 +70,13 @@ const Result = ({ ...props }) => {
     );
   };
 
+  const handleRefreshButton = () => {
+    setTotalScore(0);
+    setIndexQuestion(0);
+    setAnswers([]);
+    navigate("/instruction");
+  };
+
   return (
     <>
       <div className="result" {...props}>
@@ -54,7 +88,7 @@ const Result = ({ ...props }) => {
               </div>
               <div className="title-right">
                 <div>Voice of the customer - Cấp Độ {userResult.level}</div>
-                <h2>Performing</h2>
+                <h2>{textLevel}</h2>
               </div>
             </div>
             <div className="result">
@@ -81,9 +115,20 @@ const Result = ({ ...props }) => {
           </div>
         </Popup>
         <div className="action">
-          <button onClick={shareResult}>Share on Facebook</button>
-          <button>Tải Xuống</button>
-          <button onClick={() => {}}>Làm lại</button>
+          <button className="btn-primary" onClick={shareResult}>
+            Chia sẽ
+          </button>
+          <button className="btn-secondary">
+            <img width={20} src={downloadIcon} alt="download-icon" />
+          </button>
+          <button className="btn-secondary">
+            <img
+              width={20}
+              src={refreshIcon}
+              alt="refresh-icon"
+              onClick={handleRefreshButton}
+            />
+          </button>
         </div>
       </div>
     </>
