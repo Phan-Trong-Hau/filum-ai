@@ -5,6 +5,7 @@ import Result from "../pages/result";
 import Instruction from "../pages/intruction";
 import { useContext } from "react";
 import UserDataContext from "../context/UserDataProvider";
+import Share from "../pages/share";
 
 const RouterApp = () => {
   const { userEmail } = useContext(UserDataContext);
@@ -25,6 +26,7 @@ const RouterApp = () => {
       element: userEmail ? <Questions /> : <Navigate to="/" />,
     },
     { path: "/result", element: userEmail ? <Result /> : <Navigate to="/" /> },
+    { path: "/share", element: userEmail ? <Share /> : <Navigate to="/" /> },
   ];
 
   const routes = [...publicRoutes, ...privateRoutes];

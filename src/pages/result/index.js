@@ -8,11 +8,16 @@ import downloadIcon from "../../icons/download.svg";
 import { useNavigate } from "react-router-dom";
 
 const Result = ({ ...props }) => {
-  const [userResult, setUserResult] = useState({});
   const [textLevel, setTextLevel] = useState("Ad hoc");
   const { results } = data;
-  const { totalScore, userEmail, setTotalScore, setIndexQuestion, setAnswers } =
-    useContext(UserDataContext);
+  const {
+    totalScore,
+    setTotalScore,
+    setIndexQuestion,
+    setAnswers,
+    userResult,
+    setUserResult,
+  } = useContext(UserDataContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,29 +49,7 @@ const Result = ({ ...props }) => {
         }
       }
     });
-  }, [totalScore, results]);
-
-  useEffect(() => {
-    // Khởi tạo Facebook SDK
-    window.fbAsyncInit = function () {
-      window.FB.init({
-        appId: "12345",
-        xfbml: true,
-        version: "v11.0",
-      });
-    };
-  }, []);
-
-  const shareResult = () => {
-    const resultUrl = `https://filum-ai-server.vercel.app/result?level=${userResult.level}&user=${userEmail}`;
-    window.FB.ui(
-      {
-        method: "share",
-        href: resultUrl,
-      },
-      function (response) {}
-    );
-  };
+  }, [totalScore, results, setUserResult]);
 
   const handleRefreshButton = () => {
     setTotalScore(0);
@@ -75,6 +58,9 @@ const Result = ({ ...props }) => {
     navigate("/instruction");
   };
 
+  const handleClickButtonShare = () => {
+    navigate("/share");
+  };
   return (
     <>
       <div className="result" {...props}>
@@ -113,7 +99,7 @@ const Result = ({ ...props }) => {
           </div>
         </Popup>
         <div className="action">
-          <button className="btn-primary" onClick={shareResult}>
+          <button className="btn-primary" onClick={handleClickButtonShare}>
             Chia sẽ
           </button>
           <button className="btn-secondary">

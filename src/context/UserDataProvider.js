@@ -7,6 +7,7 @@ export const UserDataProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState("");
   const [indexQuestion, setIndexQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
+  const [userResult, setUserResult] = useState({});
 
   return (
     <UserDataContext.Provider
@@ -19,6 +20,8 @@ export const UserDataProvider = ({ children }) => {
         setIndexQuestion,
         answers,
         setAnswers,
+        userResult,
+        setUserResult,
       }}
     >
       {children}
