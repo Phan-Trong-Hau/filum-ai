@@ -20,6 +20,22 @@ const Result = ({ ...props }) => {
   } = useContext(UserDataContext);
   const navigate = useNavigate();
 
+  const handleRefreshButton = () => {
+    setTotalScore(0);
+    setIndexQuestion(0);
+    setAnswers([]);
+    setUserResult({});
+    navigate("/instruction");
+  };
+
+  const handleShareButton = () => {
+    navigate("/share");
+  };
+
+  const handleDownloadButton = () => {
+    alert("Chức năng Download đang được phát triển!");
+  };
+
   useEffect(() => {
     results?.forEach((result) => {
       result.range.sort((a, b) => a - b);
@@ -51,16 +67,6 @@ const Result = ({ ...props }) => {
     });
   }, [totalScore, results, setUserResult]);
 
-  const handleRefreshButton = () => {
-    setTotalScore(0);
-    setIndexQuestion(0);
-    setAnswers([]);
-    navigate("/instruction");
-  };
-
-  const handleClickButtonShare = () => {
-    navigate("/share");
-  };
   return (
     <>
       <div className="result" {...props}>
@@ -99,11 +105,16 @@ const Result = ({ ...props }) => {
           </div>
         </Popup>
         <div className="action">
-          <button className="btn-primary" onClick={handleClickButtonShare}>
+          <button className="btn-primary" onClick={handleShareButton}>
             Chia sẽ
           </button>
           <button className="btn-secondary">
-            <img width={20} src={downloadIcon} alt="download-icon" />
+            <img
+              width={20}
+              src={downloadIcon}
+              alt="download-icon"
+              onClick={handleDownloadButton}
+            />
           </button>
           <button className="btn-secondary">
             <img
