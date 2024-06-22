@@ -108,21 +108,11 @@ const Result = ({ ...props }) => {
           <button className="btn-primary" onClick={handleShareButton}>
             Chia sẽ
           </button>
-          <button className="btn-secondary">
-            <img
-              width={20}
-              src={downloadIcon}
-              alt="download-icon"
-              onClick={handleDownloadButton}
-            />
+          <button className="btn-secondary" onClick={handleDownloadButton}>
+            <img width={20} src={downloadIcon} alt="download-icon" />
           </button>
-          <button className="btn-secondary">
-            <img
-              width={20}
-              src={refreshIcon}
-              alt="refresh-icon"
-              onClick={handleRefreshButton}
-            />
+          <button className="btn-secondary" onClick={handleRefreshButton}>
+            <img width={20} src={refreshIcon} alt="refresh-icon" />
           </button>
         </div>
       </div>
