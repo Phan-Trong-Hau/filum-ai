@@ -76,10 +76,15 @@
     z-index: 1000;
     flex-direction: column;
     gap: 10px;
+    max-width: 50px;
 
     button {
       padding: 15px;
       writing-mode: vertical-lr;
+      -ms-writing-mode: vertical-lr;
+      -webkit-writing-mode: vertical-lr;
+      -moz-writing-mode: vertical-lr;
+      writing-mode: tb-rl;
     }
 
     button:nth-child(1) {
