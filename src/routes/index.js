@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/home";
 import Questions from "../pages/question";
 import Result from "../pages/result";
-import Instruction from "../pages/intruction";
+import Instruction from "../pages/instruction";
 import { useContext } from "react";
 import UserDataContext from "../context/UserDataProvider";
 import Share from "../pages/share";
